@@ -1,6 +1,8 @@
 /*
  * A basic implementation of selection sort.
  * Get the user to input the data(numbers) that need to be sorted.
+ *
+ * efficiency - O(log2n)
  */
 #include <stdio.h>
 #include <stdlib.h>
