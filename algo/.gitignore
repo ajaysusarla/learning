@@ -2,4 +2,6 @@ max_number_in_array
 selection_sort
 string_perm
 tower_of_hanoi
+binary_search
+fibonacci
 *.o
