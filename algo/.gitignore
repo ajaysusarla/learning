@@ -4,4 +4,6 @@ string_perm
 tower_of_hanoi
 binary_search
 fibonacci
+insertion_sort
+bubble_sort
 *.o
