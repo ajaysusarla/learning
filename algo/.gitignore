@@ -1,3 +1,4 @@
+*.o
 max_number_in_array
 selection_sort
 string_perm
@@ -6,4 +7,4 @@ binary_search
 fibonacci
 insertion_sort
 bubble_sort
-*.o
+quick_sort
