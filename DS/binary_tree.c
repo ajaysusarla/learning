@@ -39,6 +39,16 @@ static void free_node(Node *node)
 	}
 }
 
+static void free_tree(Node *node)
+{
+	if (node) {
+		free_tree(node->left);
+		free_tree(node->right);
+		free_node(node);
+		node = NULL;
+	}
+}
+
 static int lookup(Node *node, int target)
 {
 	if (node == NULL)
@@ -127,6 +137,8 @@ int main(int argc, char **argv)
 	printf("Post oder: ");
 	print_post_order(root);
 	printf("\n");
+
+	free_tree(root);
 
 	exit(EXIT_SUCCESS);
 }
