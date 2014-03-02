@@ -20,7 +20,7 @@ static Node *new_node(int data)
 {
 	Node *node;
 
-	node = (Node *) malloc (sizeof(Node));
+	node = (Node *)malloc(sizeof(Node));
 	if (!node)
 		return NULL;
 
