@@ -79,6 +79,14 @@ static Node *insert(Node *node, int data)
 	}
 }
 
+static int delete_node(Node *node, int data)
+{
+	if (node == NULL)
+		return -1;
+	else {
+	}
+}
+
 static void print_in_order(Node *node)
 {
 	if (node == NULL)
