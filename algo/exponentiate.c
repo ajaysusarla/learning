@@ -23,7 +23,7 @@ int exponentiate(int x, int n)
 			z *= z;
 		}
 		m = m -1;
-		power *= *z;
+		power *= z;
 	}
 
 	return power;
