@@ -72,6 +72,37 @@ static GtkWidget * new_window(void)
 	gtk_container_add(GTK_CONTAINER(window), scrolled);
 
 	tree_widget = tv_tree_new();
+	{
+		GtkTargetList *target_list;
+		GtkTargetEntry *targets;
+		int n_targets;
+
+		target_list = gtk_target_list_new(NULL, 0);
+		gtk_target_list_add_uri_targets(target_list, 0);
+		gtk_target_list_add_text_targets(target_list, 0);
+		targets = gtk_target_table_new_from_list(target_list,
+							 &n_targets);
+
+
+		gtk_tree_view_enable_model_drag_dest(GTK_TREE_VIEW(tree_widget),
+						     targets,
+						     n_targets,
+						     GDK_ACTION_MOVE |
+						     GDK_ACTION_COPY |
+						     GDK_ACTION_ASK);
+
+
+		gtk_tree_view_enable_model_drag_source(GTK_TREE_VIEW(tree_widget),
+						       GDK_BUTTON1_MASK,
+						       targets,
+						       n_targets,
+						       GDK_ACTION_MOVE |
+						       GDK_ACTION_COPY);
+
+		gtk_target_list_unref(target_list);
+		gtk_target_table_free(targets, n_targets);
+	}
+
 
 	gtk_container_add(GTK_CONTAINER(scrolled), tree_widget);
 
