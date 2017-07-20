@@ -79,13 +79,14 @@ int main(int argc, char **argv)
 
         len = my_strlen(argv[1]);
 
-        if (len)
-                wordcount++;
 
         for (i = 0; i <len; i++) {
                 if (charset[argv[1][i] + 1] & UAlpha)
                         wordcount++;
         }
+
+        if (len && (charset[argv[1][0] + 1] & LAlpha))
+                wordcount++;
 
         printf("%d\n", wordcount);
 
